@@ -13,6 +13,8 @@ Nos gustaría crear una aplicación que inicialmente tenga 3 displays que nos in
 
 Todos deben actualizarse en tiempo real cada vez que el MeteoData obtiene nuevas mediciones.
 
+No nos interesa saber como MeteData obtiene los datos de la estación meteorológica. Solo nos interesa saber que cada vez q algún dato se actualiza, se ejecuta el método `informacionActualizada`.
+
 ## Parte II
 
 Ahora nos interesa desarrollar un API que permita que otros desarrolladores creer sus propios displays y los conecten al sistema.
