@@ -1,13 +1,27 @@
 package ar.edu.unahur.obj2;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
+/**
+ * Sujeto
+ */
 public class MeteoData {
 
     private final EstacionMeteorologica estacionMeteorologica;
+    private final List<Display> displays = new ArrayList<>();
 
     public MeteoData(EstacionMeteorologica estacionMeteorologica) {
         this.estacionMeteorologica = estacionMeteorologica;
+    }
+
+    public void agregarDisplay(Display display) {
+        displays.add(display);
+    }
+
+    public void eliminarDisplay(Display display) {
+        displays.remove(display);
     }
 
     public double getHumedad() {
@@ -27,7 +41,7 @@ public class MeteoData {
      * Solo nos interesa saber que cada vez q algún dato se actualiza, se ejecuta el método
      * informacionActualizada
      */
-    public void informaciónActualizada() {
-
+    public void informacionActualizada() {
+        displays.stream().forEach(d -> d.actualizarDatos(getTemperatura(), getPresion(), getHumedad()));
     }
 }
